@@ -4,7 +4,7 @@ import { UserIcon } from './Icons';
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react';
-import { fontfamily, fontSize, gray2, gray1, gray5 } from './Styles';
+import { fontFamily, fontSize, gray2, gray1, gray5 } from './Styles';
 export const Header = () => (
   <div
     css={css`
@@ -37,7 +37,7 @@ export const Header = () => (
       placeholder="Search..."
       css={css`
         box-sizing: border-box;
-        font-family: ${fontfamily};
+        font-family: ${fontFamily};
         font-size: ${fontSize};
         padding: 8px 10px;
         border: 1px solid ${gray5};
@@ -53,7 +53,7 @@ export const Header = () => (
     />
     <a
       css={css`
-        font-family: ${fontfamily};
+        font-family: ${fontFamily};
         font-size: ${fontSize};
         padding: 5px 10px;
         background-color: transparent;
