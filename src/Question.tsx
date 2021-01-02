@@ -8,9 +8,10 @@ import { gray2, gray3 } from './Styles';
 
 interface props {
   data: QuestionData;
+  showContent?: boolean;
 }
 
-export const Question: FC<props> = ({ data }) => (
+export const Question: FC<props> = ({ data, showContent }) => (
   <div
     css={css`
       padding: 10px 0px;
@@ -24,7 +25,19 @@ export const Question: FC<props> = ({ data }) => (
     >
       {data.title}
     </div>
-
+    {showContent && (
+      <div
+        css={css`
+          padding-bottom: 10px;
+          font-size: 15px;
+          color: ${gray2};
+        `}
+      >
+        {data.content.length > 50
+          ? `${data.content.substring(0, 50)}..`
+          : data.content}
+      </div>
+    )}
     <div
       css={css`
         font-size: 12px;
@@ -37,3 +50,7 @@ export const Question: FC<props> = ({ data }) => (
     </div>
   </div>
 );
+
+Question.defaultProps = {
+  showContent: true,
+};
